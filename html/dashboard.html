@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <main>
+        <h1>Dashboard</h1>
+        <div class="painel">
+            <h2>Listagem de amigos</h2>
+            <div class="tabelaCadastro">
+                <div class="tabela">
+                    <table>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Gênero</th>
+                            <th>Descrição</th>
+                            <th>Editar</th>
+                            <th>Deletar</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="formulario">
+                    <form name="formulario">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome">
+                        <label for="email">Email</label>
+                        <input type="email" name="email">
+                        <label for="genero">Gênero</label>
+                        <select name="genero" id="genero">
+                            <option value="homemCis">Homem Cisgênero</option>
+                            <option value="mulherCis">Mulher Cisgênero</option>
+                            <option value="homemTrans">Homem Transgênero</option>
+                            <option value="mulherTrans">Mulher Transgênero</option>
+                            <option value="naoBinario">Não Binário</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <label for="descricao">Descrição</label>
+                        <input type="text" name="descricao">
+                        <button>Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
