@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Dashboard</title>
 </head>
 <body>
@@ -22,6 +24,14 @@
                             <th>Editar</th>
                             <th>Deletar</th>
                         </tr>
+                        <tr>
+                            <td>Vanessa</td>
+                            <td>nessa.martinsgomes@gmail.com</td>
+                            <td>Mulher Cisgênero</td>
+                            <td>aprendiz de front</td>
+                            <td>Editar</td>
+                            <td>Deletar</td>
+                        </tr>
                     </table>
                 </div>
                 <div class="formulario">
@@ -32,6 +42,8 @@
                         <input type="email" name="email">
                         <label for="genero">Gênero</label>
                         <select name="genero" id="genero">
+                            <option value="vazio"></option>
+                            <option value="homemCis">Homem Cisgênero</option>
                             <option value="homemCis">Homem Cisgênero</option>
                             <option value="mulherCis">Mulher Cisgênero</option>
                             <option value="homemTrans">Homem Transgênero</option>
