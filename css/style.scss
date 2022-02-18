@@ -186,6 +186,7 @@ main{
                 font-size: 16px;
                 margin-bottom: 6px;
                 margin-top: 20px;
+                cursor: pointer;
             }
         }
     }
@@ -193,8 +194,8 @@ main{
 
 //Modal
 
-.modal {
-    background-color: rgba(0, 0, 0, 0.6);
+.modalEditar {
+    background-color:  rgba(0, 0, 0, 0.9);
   
     position: fixed;
     top: 0;
@@ -219,7 +220,7 @@ main{
         height: 345px;
         gap: 28px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        
+        position: relative;
 
         h3{
             margin-bottom: 22px;
@@ -272,6 +273,7 @@ main{
             font-size: 16px;
             margin-bottom: 6px;
             margin-top: 25px;
+            cursor: pointer;
         }
 
         .campoObrigatorio{
@@ -320,7 +322,7 @@ main{
         all: unset;
         cursor: pointer;
     
-        &.close {
+        &.closeEditar {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -329,8 +331,68 @@ main{
           border-radius: 100px;  
           width: 32px;
           height: 32px;
-
+          top: -16px;
+          right: -16px;
         }
     }
+}
+
+.modalDeletar {
+    background-color:  rgba(0, 0, 0, 0.955);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h3{
+        font-weight: 500;
+        font-size: 40px;
+        color: #FFFFFF;
+    }
+
+    .botoes{
+        display: flex;
+        flex-direction: row;
+        
+        .excluir{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #DC3741;
+            border-radius: 8px;
+            width: 140px;
+            height: 57px;
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 316px;
+            border: none;
+            cursor: pointer;
+        }
+        .cancelar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #7066E0;
+            border-radius: 8px;
+            width: 140px;
+            height: 57px;
+            color: #0B0000;
+            font-size: 24px;
+            font-weight: bold;
+            border:none;
+            cursor: pointer;
+        }
+    }
+    
 }
 

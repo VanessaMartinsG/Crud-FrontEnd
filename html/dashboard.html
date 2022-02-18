@@ -127,10 +127,7 @@
         </div>
     </main>
 
-    <div class="modal">
-        <button class="modal__button close">
-            <img src="../img/Vector.svg" alt="Fechar modal" />
-          </button>
+    <div class="modalEditar">
         <div class="corpoModal">
             <h3>Editar os dados de Fulano</h3>
             <form name="formularioModal" id="formModal">
@@ -169,14 +166,22 @@
                         </select>
                         <p class="campoObrigatorio genero">Campo obrigatório</p>
                     </div>   
-                </div>
-                
-                
-                
+                </div>      
             </form>
             <button form="formModal">Alterar dados</button>
+            <div class="modal__button closeEditar">
+                <img src="../img/Vector.svg" alt="Fechar modal" />
+            </div>
         </div>
-    
+    </div>
+
+    <div class="modalDeletar">   
+        <h3>Tem certeza de que deseja excluir o amigo Fulano?</h3>
+        <div class="botoes">
+            <button class="excluir">Excluir</button>
+            <button class="cancelar">Cancelar</button>
+        </div>
+            
     </div>
 </body>
 </html>
