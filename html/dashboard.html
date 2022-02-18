@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/dashboard.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -15,35 +16,99 @@
             <h2>Listagem de amigos</h2>
             <div class="tabelaCadastro">
                 <div class="tabela">
-                    <table>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Gênero</th>
-                            <th>Descrição</th>
-                            <th>Editar</th>
-                            <th>Deletar</th>
-                        </tr>
-                        <tr>
-                            <td>Vanessa</td>
-                            <td>nessa.martinsgomes@gmail.com</td>
-                            <td>Mulher Cisgênero</td>
-                            <td>aprendiz de front</td>
-                            <td>Editar</td>
-                            <td>Deletar</td>
-                        </tr>
-                    </table>
+                    <div class="linha">
+                        <p class="titulo nome">Nome</p>
+                        <p class="titulo email">Email</p>
+                        <p class="titulo genero">Gênero</p>
+                        <p class="titulo descricao">Descrição</p>
+                        <p class="titulo editar">Editar</p>
+                        <p class="titulo deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front com foco em react</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                    <div class="linha">
+                        <p class="nome">Vanessa</p>
+                        <p class="email">nessa.martinsgomes@gmail.com</p>
+                        <p class="genero">Mulher Cisgênero</p>
+                        <p class="descricao">aprendiz de front</p>
+                        <p class="editar">Editar</p>
+                        <p class="deletar">Deletar</p>
+                    </div>
+                            
                 </div>
                 <div class="formulario">
                     <form name="formulario">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome">
+                        <p class="campoObrigatorio nome">Campo obrigatório</p>
                         <label for="email">Email</label>
                         <input type="email" name="email">
+                        <p class="campoObrigatorio email">Campo obrigatório</p>
                         <label for="genero">Gênero</label>
-                        <select name="genero" id="genero">
+                        <select name="genero">
                             <option value="vazio"></option>
-                            <option value="homemCis">Homem Cisgênero</option>
                             <option value="homemCis">Homem Cisgênero</option>
                             <option value="mulherCis">Mulher Cisgênero</option>
                             <option value="homemTrans">Homem Transgênero</option>
@@ -51,13 +116,67 @@
                             <option value="naoBinario">Não Binário</option>
                             <option value="outro">Outro</option>
                         </select>
+                        <p class="campoObrigatorio genero">Campo obrigatório</p>
                         <label for="descricao">Descrição</label>
                         <input type="text" name="descricao">
+                        <p class="campoObrigatorio descricao">Campo obrigatório</p>
                         <button>Cadastrar</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
+
+    <div class="modal">
+        <button class="modal__button close">
+            <img src="../img/Vector.svg" alt="Fechar modal" />
+          </button>
+        <div class="corpoModal">
+            <h3>Editar os dados de Fulano</h3>
+            <form name="formularioModal" id="formModal">
+                <div class="linhaForm">
+                    <!-- NOME MODAL -->
+                    <div class="camposFormModal">
+                        <label for="nomeModal">Nome</label>
+                        <input type="text" name="nomeModal">
+                        <p class="campoObrigatorio nome">Campo obrigatório</p>
+                    </div>
+                    <!-- DESCRIÇÃO MODAL -->
+                    <div class="camposFormModal">
+                        <label for="descricaoModal">Descrição</label>
+                        <input type="text" name="descricaoModal">
+                        <p class="campoObrigatorio descricao">Campo obrigatório</p>
+                    </div>
+                </div>
+                <div class="linhaForm">
+                    <!-- EMAIL MODAL -->
+                    <div class="camposFormModal">
+                        <label for="emailModal">Email</label>
+                        <input type="email" name="emailModal">
+                        <p class="campoObrigatorio email">Campo obrigatório</p>
+                    </div>
+                    <!-- GÊNERO MODAL -->
+                    <div class="camposFormModal">
+                        <label for="generoModal">Gênero</label>
+                        <select name="generoModal">
+                            <option value="vazio"></option>
+                            <option value="homemCis">Homem Cisgênero</option>
+                            <option value="mulherCis">Mulher Cisgênero</option>
+                            <option value="homemTrans">Homem Transgênero</option>
+                            <option value="mulherTrans">Mulher Transgênero</option>
+                            <option value="naoBinario">Não Binário</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <p class="campoObrigatorio genero">Campo obrigatório</p>
+                    </div>   
+                </div>
+                
+                
+                
+            </form>
+            <button form="formModal">Alterar dados</button>
+        </div>
+    
+    </div>
 </body>
 </html>
