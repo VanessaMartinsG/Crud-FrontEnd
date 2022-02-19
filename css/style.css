@@ -137,8 +137,16 @@ main .tabelaCadastro .tabela .linha .editar, main .tabelaCadastro .tabela .linha
   width: 100px;
 }
 
+main .tabelaCadastro .tabela .linha .editar {
+  cursor: pointer;
+}
+
 main .tabelaCadastro .tabela .linha .deletar, main .tabelaCadastro .tabela .linha .deletarT {
   width: 100px;
+}
+
+main .tabelaCadastro .tabela .linha .deletar {
+  cursor: pointer;
 }
 
 main .tabelaCadastro .tabela p {
