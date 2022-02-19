@@ -92,6 +92,7 @@ main .tabelaCadastro .tabela {
 
 main .tabelaCadastro .tabela::-webkit-scrollbar {
   background-color: #C4C4C4;
+  border-radius: 8px;
 }
 
 main .tabelaCadastro .tabela::-webkit-scrollbar-thumb {
@@ -132,11 +133,11 @@ main .tabelaCadastro .tabela .linha .descricao {
   width: 250px;
 }
 
-main .tabelaCadastro .tabela .linha .editar {
+main .tabelaCadastro .tabela .linha .editar, main .tabelaCadastro .tabela .linha .editarT {
   width: 100px;
 }
 
-main .tabelaCadastro .tabela .linha .deletar {
+main .tabelaCadastro .tabela .linha .deletar, main .tabelaCadastro .tabela .linha .deletarT {
   width: 100px;
 }
 

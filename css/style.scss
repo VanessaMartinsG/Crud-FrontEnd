@@ -59,6 +59,7 @@ main{
             overflow-y: scroll;
             &::-webkit-scrollbar{
                 background-color: #C4C4C4;
+                border-radius: 8px;
             }
             &::-webkit-scrollbar-thumb{
                 background-color: #EAE9E9;
@@ -84,10 +85,10 @@ main{
                 .descricao{
                     width: 250px;
                 }
-                .editar{
+                .editar, .editarT{
                     width: 100px;
                 }
-                .deletar{
+                .deletar, .deletarT{
                     width: 100px;
                 }
             }
