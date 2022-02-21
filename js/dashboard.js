@@ -1,5 +1,8 @@
+import {modalDelete, modalEdit} from './modals.js';
+
 (()=>{
     const baseURL = "http://localhost:3002";
+    let arrayItens = [];
 
     //METODO GET
     function getItens(){
@@ -47,60 +50,14 @@
             tabela.appendChild(div);
         })
 
-        abrirModalEditar();   
-        abrirModalDeletar();
-    }
-
-//------------------------------------------------------------------------------------------
-    const modalEditar = document.querySelector(".modalEditar");
-    const modalDeletar = document.querySelector(".modalDeletar");
-
-    /* MODAL DE EDITAR */
-
-    function abrirModalEditar(){    
-        const editar = document.querySelectorAll(".editar");
-        editar.forEach(item => {
-            item.addEventListener("click", (e) => {
-                modalEditar.style.display = "flex"; 
-            });
-        });
-        fecharModalEditar();
-    }
-
-    function fecharModalEditar(){
-        const close = document.querySelectorAll(".closeEditar");
-        close.forEach(item => {
-            item.addEventListener("click", (e) => {
-                modalEditar.style.display = "none"; 
-            });
-        });
-    }
-
-    /* MODAL DE DELETAR */
-
-    function abrirModalDeletar(){
-        const deletar = document.querySelectorAll(".deletar");
-        deletar.forEach(item => {
-            item.addEventListener("click", (e) => {
-                modalDeletar.style.display = "flex"; 
-            });
-        });
-        fecharModalDeletar();
-    }
-
-    function fecharModalDeletar(){
-        const close = document.querySelectorAll(".cancelar");
-        close.forEach(item => {
-            item.addEventListener("click", (e) => {
-                modalDeletar.style.display = "none"; 
-            });
-        });
+        modalEdit();  
+        modalDelete();
     }
 
     function init(){
         getItens();
     }
 
-init();
+    init();
 
 })();
