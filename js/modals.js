@@ -1,40 +1,39 @@
 
-export function modalEdit(){
+export function modalEdit() {
 
-    const modalEdit = document.querySelector(".modalEditar");
+    const modalEdit = document.querySelector(".editModal");
 
-    const edit = document.querySelectorAll(".editar");
+    const edit = document.querySelectorAll(".table__cellEdit.icon");
     edit.forEach(item => {
         item.addEventListener("click", (e) => {
-            modalEdit.style.display = "flex"; 
+            modalEdit.style.display = "flex";
         });
     });
-    const close = document.querySelectorAll(".closeEditar");
+    const close = document.querySelectorAll(".editModal__close");
     close.forEach(item => {
         item.addEventListener("click", (e) => {
-            modalEdit.style.display = "none"; 
+            modalEdit.style.display = "none";
         });
     });
 }
 
 
-export function modalDelete(){
+export function modalDelete() {
 
-    const modalDelete = document.querySelector(".modalDeletar");
+    const modalDelete = document.querySelector(".deleteModal");
 
-    const delet = document.querySelectorAll(".deletar");
+    const delet = document.querySelectorAll(".table__cellDelete.icon");
     delet.forEach(item => {
         item.addEventListener("click", (e) => {
-            modalDelete.style.display = "flex"; 
+            modalDelete.style.display = "flex";
         });
     });
-        
-    const close = document.querySelectorAll(".cancelar");
+
+    const close = document.querySelectorAll(".deleteModal__cancelBtn");
     close.forEach(item => {
         item.addEventListener("click", (e) => {
-            modalDelete.style.display = "none"; 
+            modalDelete.style.display = "none";
         });
     });
 }
 
-    

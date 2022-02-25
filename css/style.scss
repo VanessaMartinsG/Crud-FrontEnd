@@ -1,27 +1,30 @@
 @import "./global.scss";
 @import "./modals.scss";
+@import "./buttons.scss";
 
-body{
+body {
     background-color: #171515;
     height: 100vh;
 }
 
-main{
+.dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
 
-    h1{
-        color: #FFFFFF;
+    &__title {
+        color: #ffffff;
         font-size: 45px;
         font-weight: 400;
         margin-top: 25px;
         margin-bottom: 30px;
     }
 
-    .painel{
+    .panel {
+        $self: &;
         background-color: #474554;
         display: flex;
         flex-direction: column;
@@ -29,174 +32,162 @@ main{
         border-radius: 6px;
         width: 1126px;
         padding-bottom: 30px;
-        
 
-        h2{
-            color: #FFFFFF;
+        &__title {
+            color: #ffffff;
             margin-top: 31px;
             font-size: 40px;
             font-weight: 900;
             margin-bottom: 30px;
         }
-    }
 
-    .tabelaCadastro{
-        display: flex;
-        flex-direction: row;
-
-        .tabela{
+        .registerPanel {
             display: flex;
-            flex-direction: column;
-            width: 731px;
-            background-color: #C4C4C4;
-            font-size: 14px;
-            box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-right: 42px;
-            padding: 12px 16px;
-            border: 0;
-            max-height: 345px;
-            max-width: 100%;
-            overflow-y: scroll;
-            &::-webkit-scrollbar{
-                background-color: #C4C4C4;
-                border-radius: 8px;
-            }
-            &::-webkit-scrollbar-thumb{
-                background-color: #EAE9E9;
-            }
+            flex-direction: row;
 
-            .linha{
+            .table {
+                $self: &;
                 display: flex;
-                flex-direction: row;
-                border-bottom: 1px solid #939393;
-                justify-content: flex-start;
-                align-items: center;
-                min-height: 45px;
+                flex-direction: column;
+                width: 731px;
+                background-color: #c4c4c4;
+                font-size: 14px;
+                box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                margin-right: 42px;
+                padding: 12px 16px;
+                border: 0;
+                max-height: 345px;
+                max-width: 100%;
+                overflow-y: scroll;
+                &::-webkit-scrollbar {
+                    background-color: #c4c4c4;
+                    border-radius: 8px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #eae9e9;
+                }
 
-                .nome{
+                &__header {
+                    font-weight: 500;
+                }
+
+                &__line {
+                    display: flex;
+                    flex-direction: row;
+                    border-bottom: 1px solid #939393;
+                    justify-content: flex-start;
+                    align-items: center;
+                    min-height: 45px;
+                }
+
+                p {
+                    display: block;
+                    font-size: 14px;
+                    margin-left: 15px;
+                }
+
+                &__cellName {
                     width: 130px;
                 }
-                .email{
+                &__cellEmail {
                     width: 200px;
                 }
-                .genero{
+                &__cellGender {
                     width: 130px;
                 }
-                .descricao{
+                &__cellDescription {
                     width: 250px;
                 }
-                .editar, .editarT{
+                &__cellEdit {
                     width: 100px;
                 }
-                .editar{
-                    cursor: pointer;
-                }
-                .deletar, .deletarT{
+                &__cellDelete {
                     width: 100px;
                 }
-                .deletar{
+
+                &__line:not(.table__header) > p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                .icon {
                     cursor: pointer;
                 }
             }
-            p{
-                display: block;
-                font-size: 14px;
-                width: 100px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                margin-left: 15px;
-                
-                &.titulo{
+
+            .registerForm {
+                padding: 13px;
+                display: flex;
+                flex-direction: column;
+                width: 261px;
+                background-color: #c4c4c4;
+
+                label {
+                    font-size: 16px;
                     font-weight: 500;
-                    font-size: 14px;
-                }
-            }
-
-
-        }
-
-        form{
-            padding: 13px;
-            display: flex;
-            flex-direction: column;
-            width: 261px;
-            background-color: #C4C4C4;
-
-            
-
-            label{
-                font-size: 16px;
-                font-weight: 500;
-                margin-bottom: 8px;
-                color: #2d2d2d;
-                margin-top: 18px;
-                
-            }
-
-            label::after{
-                content: "*";
-                color: #da1111;
-                margin-left: 2px;
-            }
-
-            input{
-                background-color:  #11055B;
-                border-radius: 4px;
-                width: 210px;   
-                height: 20px;
-                color: #FFFFFF;
-                padding: 3px;
-               // margin-bottom: 18px;
-            }
-
-            .campoObrigatorio{
-               // margin-bottom: 18px;
-                color: #DA1111;
-                font-size: 11px;
-                font-weight: 500;
-
-                &.nome{
-                    display: none;
+                    margin-bottom: 8px;
+                    color: #2d2d2d;
+                    margin-top: 18px;
                 }
 
-                &.email{
-                    display: none;
+                label::after {
+                    content: "*";
+                    color: #da1111;
+                    margin-left: 2px;
                 }
 
-                &.genero{
-                    display: none;
+                input {
+                    background-color: #11055b;
+                    border-radius: 4px;
+                    width: 210px;
+                    height: 20px;
+                    color: #ffffff;
+                    padding: 3px;
+                    // margin-bottom: 18px;
                 }
 
-                &.descricao{
-                    display: none;
+                .requiredField {
+                    // margin-bottom: 18px;
+                    color: #da1111;
+                    font-size: 11px;
+                    font-weight: 500;
+
+                    &--name {
+                        display: none;
+                    }
+
+                    &--email {
+                        display: none;
+                    }
+
+                    &--gender {
+                        display: none;
+                    }
+
+                    &--description {
+                        display: none;
+                    }
                 }
-            }
 
-            select{
-                background-color:  #11055B;
-                border-radius: 4px;
-                width: 210px;   
-                height: 20px;
-                color: #FFFFFF;
-               // margin-bottom: 18px;
-            }
+                select {
+                    background-color: #11055b;
+                    border-radius: 4px;
+                    width: 210px;
+                    height: 20px;
+                    color: #ffffff;
+                    // margin-bottom: 18px;
+                }
 
-            button{
-                background: #FFBE6B;
-                border-radius: 8px;
-                width: 103px;
-                height: 25px;
-                color: #000000;
-                padding: 3px 17px;
-                border: 0;
-                font-size: 16px;
-                margin-bottom: 6px;
-                margin-top: 20px;
-                cursor: pointer;
+                button {
+                    width: 103px;
+                    height: 25px;
+                    padding: 3px 17px;
+                    margin-bottom: 6px;
+                    margin-top: 20px;
+                }
             }
         }
     }
 }
-

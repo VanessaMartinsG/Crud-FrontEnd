@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,32 +10,33 @@
     <script type="module" src="../js/dashboard.js" defer></script>
     <title>Dashboard</title>
 </head>
+
 <body>
-    <main>
-        <h1>Dashboard</h1>
-        <div class="painel">
-            <h2>Listagem de amigos</h2>
-            <div class="tabelaCadastro">
-                <div class="tabela">
-                    <div class="linha">
-                        <p class="titulo nome">Nome</p>
-                        <p class="titulo email">Email</p>
-                        <p class="titulo genero">Gênero</p>
-                        <p class="titulo descricao">Descrição</p>
-                        <p class="titulo editarT">Editar</p>
-                        <p class="titulo deletarT">Deletar</p>
-                    </div>                            
+    <main class="dashboard">
+        <h1 class="dashboard__title">Dashboard</h1>
+        <div class="panel">
+            <h2 class="panel__title">Listagem de amigos</h2>
+            <div class="registerPanel">
+                <div class="table">
+                    <div class="table__line table__header">
+                        <p class="table__cellName">Nome</p>
+                        <p class="table__cellEmail">Email</p>
+                        <p class="table__cellGender">Gênero</p>
+                        <p class="table__cellDescription">Descrição</p>
+                        <p class="table__cellEdit">Editar</p>
+                        <p class="table__cellDelete">Deletar</p>
+                    </div>
                 </div>
-                <div class="formulario">
-                    <form name="formulario">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome">
-                        <p class="campoObrigatorio nome">Campo obrigatório</p>
+                <div class="regForm">
+                    <form name="registerForm" class="registerForm">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name">
+                        <p class="requiredField--name">Campo obrigatório</p>
                         <label for="email">Email</label>
                         <input type="email" name="email">
-                        <p class="campoObrigatorio email">Campo obrigatório</p>
-                        <label for="genero">Gênero</label>
-                        <select name="genero">
+                        <p class="requiredField--email">Campo obrigatório</p>
+                        <label for="gender">Gênero</label>
+                        <select name="gender">
                             <option value="vazio"></option>
                             <option value="homemCis">Homem Cisgênero</option>
                             <option value="mulherCis">Mulher Cisgênero</option>
@@ -43,46 +45,46 @@
                             <option value="naoBinario">Não Binário</option>
                             <option value="outro">Outro</option>
                         </select>
-                        <p class="campoObrigatorio genero">Campo obrigatório</p>
-                        <label for="descricao">Descrição</label>
-                        <input type="text" name="descricao">
-                        <p class="campoObrigatorio descricao">Campo obrigatório</p>
-                        <button>Cadastrar</button>
+                        <p class="requiredField--gender">Campo obrigatório</p>
+                        <label for="description">Descrição</label>
+                        <input type="text" name="description">
+                        <p class="requiredField--description">Campo obrigatório</p>
+                        <button class="btn btn--yellow">Cadastrar</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
 
-    <div class="modalEditar">
-        <div class="corpoModal">
-            <h3>Editar os dados de Fulano</h3>
-            <form name="formularioModal" id="formModal">
-                <div class="linhaForm">
+    <div class="modal editModal">
+        <div class="editModal__content">
+            <h3 class="editModal__title">Editar os dados de Fulano</h3>
+            <form name="editForm" class="editModalForm" id="formModal">
+                <div class="editModalForm__line">
                     <!-- NOME MODAL -->
-                    <div class="camposFormModal">
-                        <label for="nomeModal">Nome</label>
-                        <input type="text" name="nomeModal">
-                        <p class="campoObrigatorio nome">Campo obrigatório</p>
+                    <div class="editModalForm__field">
+                        <label for="nameModal">Nome</label>
+                        <input type="text" name="nameModal">
+                        <p class="requiredField--name">Campo obrigatório</p>
                     </div>
                     <!-- DESCRIÇÃO MODAL -->
-                    <div class="camposFormModal">
+                    <div class="editModalForm__field">
                         <label for="descricaoModal">Descrição</label>
-                        <input type="text" name="descricaoModal">
-                        <p class="campoObrigatorio descricao">Campo obrigatório</p>
+                        <input type="text" name="descriptionModal">
+                        <p class="requiredField--description">Campo obrigatório</p>
                     </div>
                 </div>
-                <div class="linhaForm">
+                <div class="editModalForm__line">
                     <!-- EMAIL MODAL -->
-                    <div class="camposFormModal">
+                    <div class="editModalForm__field">
                         <label for="emailModal">Email</label>
                         <input type="email" name="emailModal">
-                        <p class="campoObrigatorio email">Campo obrigatório</p>
+                        <p class="requiredField--email">Campo obrigatório</p>
                     </div>
                     <!-- GÊNERO MODAL -->
-                    <div class="camposFormModal">
-                        <label for="generoModal">Gênero</label>
-                        <select name="generoModal">
+                    <div class="editModalForm__field">
+                        <label for="genderModal">Gênero</label>
+                        <select name="genderModal">
                             <option value="vazio"></option>
                             <option value="homemCis">Homem Cisgênero</option>
                             <option value="mulherCis">Mulher Cisgênero</option>
@@ -91,23 +93,24 @@
                             <option value="naoBinario">Não Binário</option>
                             <option value="outro">Outro</option>
                         </select>
-                        <p class="campoObrigatorio genero">Campo obrigatório</p>
-                    </div>   
-                </div>      
+                        <p class="requiredField--gender">Campo obrigatório</p>
+                    </div>
+                </div>
             </form>
-            <button form="formModal">Alterar dados</button>
-            <div class="modal__button closeEditar">
+            <button class="btn btn--yellow editModal__btn" form="editForm">Alterar dados</button>
+            <div class="editModal__close">
                 <img src="../img/Vector.svg" alt="Fechar modal" />
             </div>
         </div>
     </div>
 
-    <div class="modalDeletar">   
-        <h3>Tem certeza de que deseja excluir o amigo Fulano?</h3>
-        <div class="botoes">
-            <button class="excluir">Excluir</button>
-            <button class="cancelar">Cancelar</button>
-        </div>       
+    <div class="modal deleteModal">
+        <h3 class="deleteModal__title">Tem certeza de que deseja excluir o amigo Fulano?</h3>
+        <div class="deleteModal__btns">
+            <button class="btn btn--red deleteModal__deleteBtn">Excluir</button>
+            <button class="btn btn--blue deleteModal__cancelBtn">Cancelar</button>
+        </div>
     </div>
 </body>
+
 </html>

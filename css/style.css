@@ -5,7 +5,7 @@
           box-sizing: border-box;
 }
 
-.modalEditar {
+.modal {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -14,6 +14,12 @@
   left: 0;
   z-index: 2;
   display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editModal {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -21,12 +27,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.modalEditar .corpoModal {
+.editModal__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,89 +41,21 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 14px 20px;
-  background: #C4C4C4;
+  background: #c4c4c4;
   width: 478px;
   height: 345px;
   gap: 28px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: relative;
 }
 
-.modalEditar .corpoModal h3 {
+.editModal__title {
   margin-bottom: 22px;
   font-size: 32px;
   font-weight: 500;
 }
 
-.modalEditar .corpoModal label {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 12px;
-  color: #2d2d2d;
-}
-
-.modalEditar .corpoModal label::after {
-  content: "*";
-  color: #da1111;
-  margin-left: 2px;
-}
-
-.modalEditar .corpoModal input {
-  background-color: #11055B;
-  border-radius: 4px;
-  width: 194px;
-  height: 19px;
-  color: #FFFFFF;
-  padding: 3px;
-  padding-left: 7px;
-}
-
-.modalEditar .corpoModal select {
-  background-color: #11055B;
-  border-radius: 4px;
-  width: 194px;
-  height: 19px;
-  color: #FFFFFF;
-}
-
-.modalEditar .corpoModal button {
-  font-size: 16px;
-  background: #FFBE6B;
-  border-radius: 8px;
-  width: 139px;
-  height: 25px;
-  color: #000000;
-  padding: 3px 17px;
-  border: 0;
-  font-size: 16px;
-  margin-bottom: 6px;
-  margin-top: 25px;
-  cursor: pointer;
-}
-
-.modalEditar .corpoModal .campoObrigatorio {
-  color: #DA1111;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.nome {
-  display: none;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.email {
-  display: none;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.genero {
-  display: none;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.descricao {
-  display: none;
-}
-
-.modalEditar .corpoModal #formModal {
+.editModalForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,7 +66,7 @@
   gap: 28px;
 }
 
-.modalEditar .corpoModal .linhaForm {
+.editModalForm__line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,7 +77,7 @@
   gap: 28px;
 }
 
-.modalEditar .corpoModal .linhaForm .camposFormModal {
+.editModalForm__field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,12 +87,70 @@
           flex-direction: column;
 }
 
-.modalEditar .modal__button {
-  all: unset;
-  cursor: pointer;
+.editModalForm label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #2d2d2d;
 }
 
-.modalEditar .modal__button.closeEditar {
+.editModalForm label::after {
+  content: "*";
+  color: #da1111;
+  margin-left: 2px;
+}
+
+.editModalForm input {
+  background-color: #11055b;
+  border-radius: 4px;
+  width: 194px;
+  height: 19px;
+  color: #ffffff;
+  padding: 3px;
+  padding-left: 7px;
+}
+
+.editModalForm select {
+  background-color: #11055b;
+  border-radius: 4px;
+  width: 194px;
+  height: 19px;
+  color: #ffffff;
+}
+
+.editModalForm .requiredField {
+  color: #da1111;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.editModalForm .requiredField--name {
+  display: none;
+}
+
+.editModalForm .requiredField--email {
+  display: none;
+}
+
+.editModalForm .requiredField--gender {
+  display: none;
+}
+
+.editModalForm .requiredField--description {
+  display: none;
+}
+
+.editModal__btn {
+  width: 139px;
+  height: 25px;
+  padding: 3px 17px;
+  margin-bottom: 6px;
+  margin-top: 25px;
+}
+
+.editModal__close {
+  all: unset;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,7 +161,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  background-color: #FF0000;
+  background-color: #ff0000;
   border-radius: 100px;
   width: 32px;
   height: 32px;
@@ -176,34 +169,23 @@
   right: -16px;
 }
 
-.modalDeletar {
-  background-color: rgba(0, 0, 0, 0.955);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: none;
+.deleteModal {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.modalDeletar h3 {
+.deleteModal__title {
   font-weight: 500;
   font-size: 40px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.modalDeletar .botoes {
+.deleteModal__btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,7 +195,7 @@
           flex-direction: row;
 }
 
-.modalDeletar .botoes .excluir {
+.deleteModal__btns button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,37 +205,36 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #DC3741;
-  border-radius: 8px;
   width: 140px;
   height: 57px;
-  color: #FFFFFF;
   font-size: 24px;
   font-weight: bold;
-  margin-right: 316px;
-  border: none;
-  cursor: pointer;
 }
 
-.modalDeletar .botoes .cancelar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #7066E0;
-  border-radius: 8px;
-  width: 140px;
-  height: 57px;
-  color: #0B0000;
-  font-size: 24px;
-  font-weight: bold;
+.deleteModal__btns .deleteModal__deleteBtn {
+  margin-right: 316px;
+}
+
+.btn {
   border: none;
   cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.btn--red {
+  background: #dc3741;
+  color: #ffffff;
+}
+
+.btn--blue {
+  background: #7066e0;
+  color: #0b0000;
+}
+
+.btn--yellow {
+  background: #ffbe6b;
+  color: #000000;
 }
 
 body {
@@ -261,7 +242,7 @@ body {
   height: 100vh;
 }
 
-main {
+.dashboard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,18 +254,18 @@ main {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-main h1 {
-  color: #FFFFFF;
+.dashboard__title {
+  color: #ffffff;
   font-size: 45px;
   font-weight: 400;
   margin-top: 25px;
   margin-bottom: 30px;
 }
 
-main .painel {
+.dashboard .panel {
   background-color: #474554;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -301,15 +282,15 @@ main .painel {
   padding-bottom: 30px;
 }
 
-main .painel h2 {
-  color: #FFFFFF;
+.dashboard .panel__title {
+  color: #ffffff;
   margin-top: 31px;
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 30px;
 }
 
-main .tabelaCadastro {
+.dashboard .panel .registerPanel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,7 +300,7 @@ main .tabelaCadastro {
           flex-direction: row;
 }
 
-main .tabelaCadastro .tabela {
+.dashboard .panel .registerPanel .table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,7 +309,7 @@ main .tabelaCadastro .tabela {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 731px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   font-size: 14px;
   -webkit-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
@@ -341,16 +322,20 @@ main .tabelaCadastro .tabela {
   overflow-y: scroll;
 }
 
-main .tabelaCadastro .tabela::-webkit-scrollbar {
-  background-color: #C4C4C4;
+.dashboard .panel .registerPanel .table::-webkit-scrollbar {
+  background-color: #c4c4c4;
   border-radius: 8px;
 }
 
-main .tabelaCadastro .tabela::-webkit-scrollbar-thumb {
-  background-color: #EAE9E9;
+.dashboard .panel .registerPanel .table::-webkit-scrollbar-thumb {
+  background-color: #eae9e9;
 }
 
-main .tabelaCadastro .tabela .linha {
+.dashboard .panel .registerPanel .table__header {
+  font-weight: 500;
+}
+
+.dashboard .panel .registerPanel .table__line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -368,54 +353,47 @@ main .tabelaCadastro .tabela .linha {
   min-height: 45px;
 }
 
-main .tabelaCadastro .tabela .linha .nome {
-  width: 130px;
-}
-
-main .tabelaCadastro .tabela .linha .email {
-  width: 200px;
-}
-
-main .tabelaCadastro .tabela .linha .genero {
-  width: 130px;
-}
-
-main .tabelaCadastro .tabela .linha .descricao {
-  width: 250px;
-}
-
-main .tabelaCadastro .tabela .linha .editar, main .tabelaCadastro .tabela .linha .editarT {
-  width: 100px;
-}
-
-main .tabelaCadastro .tabela .linha .editar {
-  cursor: pointer;
-}
-
-main .tabelaCadastro .tabela .linha .deletar, main .tabelaCadastro .tabela .linha .deletarT {
-  width: 100px;
-}
-
-main .tabelaCadastro .tabela .linha .deletar {
-  cursor: pointer;
-}
-
-main .tabelaCadastro .tabela p {
+.dashboard .panel .registerPanel .table p {
   display: block;
   font-size: 14px;
-  width: 100px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   margin-left: 15px;
 }
 
-main .tabelaCadastro .tabela p.titulo {
-  font-weight: 500;
-  font-size: 14px;
+.dashboard .panel .registerPanel .table__cellName {
+  width: 130px;
 }
 
-main .tabelaCadastro form {
+.dashboard .panel .registerPanel .table__cellEmail {
+  width: 200px;
+}
+
+.dashboard .panel .registerPanel .table__cellGender {
+  width: 130px;
+}
+
+.dashboard .panel .registerPanel .table__cellDescription {
+  width: 250px;
+}
+
+.dashboard .panel .registerPanel .table__cellEdit {
+  width: 100px;
+}
+
+.dashboard .panel .registerPanel .table__cellDelete {
+  width: 100px;
+}
+
+.dashboard .panel .registerPanel .table__line:not(.table__header) > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dashboard .panel .registerPanel .table .icon {
+  cursor: pointer;
+}
+
+.dashboard .panel .registerPanel .registerForm {
   padding: 13px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,10 +403,10 @@ main .tabelaCadastro form {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 261px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
 }
 
-main .tabelaCadastro form label {
+.dashboard .panel .registerPanel .registerForm label {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 8px;
@@ -436,62 +414,56 @@ main .tabelaCadastro form label {
   margin-top: 18px;
 }
 
-main .tabelaCadastro form label::after {
+.dashboard .panel .registerPanel .registerForm label::after {
   content: "*";
   color: #da1111;
   margin-left: 2px;
 }
 
-main .tabelaCadastro form input {
-  background-color: #11055B;
+.dashboard .panel .registerPanel .registerForm input {
+  background-color: #11055b;
   border-radius: 4px;
   width: 210px;
   height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 3px;
 }
 
-main .tabelaCadastro form .campoObrigatorio {
-  color: #DA1111;
+.dashboard .panel .registerPanel .registerForm .requiredField {
+  color: #da1111;
   font-size: 11px;
   font-weight: 500;
 }
 
-main .tabelaCadastro form .campoObrigatorio.nome {
+.dashboard .panel .registerPanel .registerForm .requiredField--name {
   display: none;
 }
 
-main .tabelaCadastro form .campoObrigatorio.email {
+.dashboard .panel .registerPanel .registerForm .requiredField--email {
   display: none;
 }
 
-main .tabelaCadastro form .campoObrigatorio.genero {
+.dashboard .panel .registerPanel .registerForm .requiredField--gender {
   display: none;
 }
 
-main .tabelaCadastro form .campoObrigatorio.descricao {
+.dashboard .panel .registerPanel .registerForm .requiredField--description {
   display: none;
 }
 
-main .tabelaCadastro form select {
-  background-color: #11055B;
+.dashboard .panel .registerPanel .registerForm select {
+  background-color: #11055b;
   border-radius: 4px;
   width: 210px;
   height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-main .tabelaCadastro form button {
-  background: #FFBE6B;
-  border-radius: 8px;
+.dashboard .panel .registerPanel .registerForm button {
   width: 103px;
   height: 25px;
-  color: #000000;
   padding: 3px 17px;
-  border: 0;
-  font-size: 16px;
   margin-bottom: 6px;
   margin-top: 20px;
-  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
