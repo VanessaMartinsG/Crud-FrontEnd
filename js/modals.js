@@ -18,7 +18,7 @@ export function modalEdit() {
 }
 
 
-export function modalDelete() {
+export function modalDelete(listaAmigos) {
 
     const modalDelete = document.querySelector(".deleteModal");
 
@@ -26,6 +26,10 @@ export function modalDelete() {
     delet.forEach(item => {
         item.addEventListener("click", (e) => {
             modalDelete.style.display = "flex";
+            let amigoId = item.parentNode.getAttribute("id");
+            let amigo = listaAmigos.find(item =>
+                item.id == amigoId);
+            populateModalDelete(amigo);
         });
     });
 
@@ -35,5 +39,13 @@ export function modalDelete() {
             modalDelete.style.display = "none";
         });
     });
+}
+
+function populateModalDelete(amigo) {
+    const modalDelete = document.querySelector(".deleteModal");
+    const modalTitle = modalDelete.querySelector(".deleteModal__title");
+    modalTitle.textContent = "Tem certeza de que deseja excluir o amigo " + amigo.name + "?";
+    const confirmDelete = modalDelete.querySelector(".deleteModal__deleteBtn");
+    confirmDelete.setAttribute("id", amigo.id);
 }
 

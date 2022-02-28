@@ -14,6 +14,13 @@ import { modalDelete, modalEdit } from './modals.js';
             });
     }
 
+    //METODO DELETE
+    function delItem(itemId) {
+        const res = fetch(`${baseURL}/friends/${itemId}`, {
+            method: 'DELETE'
+        });
+    }
+
     function creatHTML() {
         const tabela = document.querySelector(".table");
 
@@ -36,6 +43,7 @@ import { modalDelete, modalEdit } from './modals.js';
             deletar.classList.add("table__cellDelete");
             deletar.classList.add("icon");
 
+            div.setAttribute("id", item.id);
             nome.textContent = item.name;
             email.textContent = item.email;
             genero.textContent = item.gender;
@@ -53,11 +61,22 @@ import { modalDelete, modalEdit } from './modals.js';
         })
 
         modalEdit();
-        modalDelete();
+        modalDelete(arrayItens);
+    }
+
+    function confirmDelete() {
+        const modalDelete = document.querySelector(".deleteModal");
+        const confirmDelete = modalDelete.querySelector(".deleteModal__deleteBtn");
+
+        confirmDelete.addEventListener("click", () => {
+            delItem(confirmDelete.getAttribute("id"));
+            modalDelete.style.display = "none";
+        });
     }
 
     function init() {
         getItens();
+        confirmDelete();
     }
 
     init();
