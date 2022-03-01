@@ -1,10 +1,18 @@
 {
-    "friends":[
-        {"id":1,
-         "name": "Vanessa Martins",
-         "email": "nessa.martinsgomes@gmail.com",
-         "description": "Estudando frontEnd",
-         "gender": "Mulher Cisgênero"
+    "friends": [
+        {
+            "id": 2,
+            "name": "Vanessa Martins",
+            "email": "nessa.martinsgomes@gmail.com",
+            "description": "Estudando frontEnd",
+            "gender": "Mulher Cisgênero"
+        },
+        {
+            "id": 4,
+            "name": "Dark Souls",
+            "email": "nessa.martinsgomes@gmail.com",
+            "description": "Estudando frontEnd",
+            "gender": "Mulher Cisgênero"
         }
     ]
 }

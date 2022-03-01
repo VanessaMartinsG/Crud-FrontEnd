@@ -1,23 +1,30 @@
-import {modalDelete, modalEdit} from './modals.js';
+import { modalDelete, modalEdit } from './modals.js';
 
-(()=>{
-    const baseURL = "http://localhost:3002";
+(() => {
+    const baseURL = "http://localhost:3000";
     let arrayItens = [];
 
     //METODO GET
-    function getItens(){
+    function getItens() {
         const dataArray = fetch(`${baseURL}/friends`);
         dataArray.then((response) => response.json())
-        .then((data) =>{
-            arrayItens = data;
-            creatHTML();
-    });
-    }   
+            .then((data) => {
+                arrayItens = data;
+                creatHTML();
+            });
+    }
+
+    //METODO DELETE
+    function delItem(itemId) {
+        const res = fetch(`${baseURL}/friends/${itemId}`, {
+            method: 'DELETE'
+        });
+    }
 
     function creatHTML() {
-        const tabela = document.querySelector(".tabela");
+        const tabela = document.querySelector(".table");
 
-        arrayItens.forEach((item) =>{
+        arrayItens.forEach((item) => {
             let div = document.createElement("div");
             let nome = document.createElement("p");
             let email = document.createElement("p");
@@ -26,14 +33,17 @@ import {modalDelete, modalEdit} from './modals.js';
             let editar = document.createElement("p");
             let deletar = document.createElement("p");
 
-            div.classList.add("linha");
-            nome.classList.add("nome");
-            email.classList.add("email");
-            genero.classList.add("genero");
-            descricao.classList.add("descricao");
-            editar.classList.add("editar");
-            deletar.classList.add("deletar");
+            div.classList.add("table__line");
+            nome.classList.add("table__cellName");
+            email.classList.add("table__cellEmail");
+            genero.classList.add("table__cellGender");
+            descricao.classList.add("table__cellDescription");
+            editar.classList.add("table__cellEdit");
+            editar.classList.add("icon");
+            deletar.classList.add("table__cellDelete");
+            deletar.classList.add("icon");
 
+            div.setAttribute("id", item.id);
             nome.textContent = item.name;
             email.textContent = item.email;
             genero.textContent = item.gender;
@@ -50,12 +60,23 @@ import {modalDelete, modalEdit} from './modals.js';
             tabela.appendChild(div);
         })
 
-        modalEdit();  
-        modalDelete();
+        modalEdit();
+        modalDelete(arrayItens);
     }
 
-    function init(){
+    function confirmDelete() {
+        const modalDelete = document.querySelector(".deleteModal");
+        const confirmDelete = modalDelete.querySelector(".deleteModal__deleteBtn");
+
+        confirmDelete.addEventListener("click", () => {
+            delItem(confirmDelete.getAttribute("id"));
+            modalDelete.style.display = "none";
+        });
+    }
+
+    function init() {
         getItens();
+        confirmDelete();
     }
 
     init();

@@ -1,0 +1,20 @@
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    &--red {
+        background: #dc3741;
+        color: #ffffff;
+    }
+
+    &--blue {
+        background: #7066e0;
+        color: #0b0000;
+    }
+
+    &--yellow {
+        background: #ffbe6b;
+        color: #000000;
+    }
+}

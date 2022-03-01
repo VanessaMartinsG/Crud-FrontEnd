@@ -1,4 +1,4 @@
-.modalEditar {
+.modal {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -7,6 +7,12 @@
   left: 0;
   z-index: 2;
   display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.editModal {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -14,12 +20,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.modalEditar .corpoModal {
+.editModal__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,89 +34,21 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 14px 20px;
-  background: #C4C4C4;
+  background: #c4c4c4;
   width: 478px;
   height: 345px;
   gap: 28px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: relative;
 }
 
-.modalEditar .corpoModal h3 {
+.editModal__title {
   margin-bottom: 22px;
   font-size: 32px;
   font-weight: 500;
 }
 
-.modalEditar .corpoModal label {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 12px;
-  color: #2d2d2d;
-}
-
-.modalEditar .corpoModal label::after {
-  content: "*";
-  color: #da1111;
-  margin-left: 2px;
-}
-
-.modalEditar .corpoModal input {
-  background-color: #11055B;
-  border-radius: 4px;
-  width: 194px;
-  height: 19px;
-  color: #FFFFFF;
-  padding: 3px;
-  padding-left: 7px;
-}
-
-.modalEditar .corpoModal select {
-  background-color: #11055B;
-  border-radius: 4px;
-  width: 194px;
-  height: 19px;
-  color: #FFFFFF;
-}
-
-.modalEditar .corpoModal button {
-  font-size: 16px;
-  background: #FFBE6B;
-  border-radius: 8px;
-  width: 139px;
-  height: 25px;
-  color: #000000;
-  padding: 3px 17px;
-  border: 0;
-  font-size: 16px;
-  margin-bottom: 6px;
-  margin-top: 25px;
-  cursor: pointer;
-}
-
-.modalEditar .corpoModal .campoObrigatorio {
-  color: #DA1111;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.nome {
-  display: none;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.email {
-  display: none;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.genero {
-  display: none;
-}
-
-.modalEditar .corpoModal .campoObrigatorio.descricao {
-  display: none;
-}
-
-.modalEditar .corpoModal #formModal {
+.editModalForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,7 +59,7 @@
   gap: 28px;
 }
 
-.modalEditar .corpoModal .linhaForm {
+.editModalForm__line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +70,7 @@
   gap: 28px;
 }
 
-.modalEditar .corpoModal .linhaForm .camposFormModal {
+.editModalForm__field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,12 +80,70 @@
           flex-direction: column;
 }
 
-.modalEditar .modal__button {
-  all: unset;
-  cursor: pointer;
+.editModalForm label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #2d2d2d;
 }
 
-.modalEditar .modal__button.closeEditar {
+.editModalForm label::after {
+  content: "*";
+  color: #da1111;
+  margin-left: 2px;
+}
+
+.editModalForm input {
+  background-color: #11055b;
+  border-radius: 4px;
+  width: 194px;
+  height: 19px;
+  color: #ffffff;
+  padding: 3px;
+  padding-left: 7px;
+}
+
+.editModalForm select {
+  background-color: #11055b;
+  border-radius: 4px;
+  width: 194px;
+  height: 19px;
+  color: #ffffff;
+}
+
+.editModalForm .requiredField {
+  color: #da1111;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.editModalForm .requiredField--name {
+  display: none;
+}
+
+.editModalForm .requiredField--email {
+  display: none;
+}
+
+.editModalForm .requiredField--gender {
+  display: none;
+}
+
+.editModalForm .requiredField--description {
+  display: none;
+}
+
+.editModal__btn {
+  width: 139px;
+  height: 25px;
+  padding: 3px 17px;
+  margin-bottom: 6px;
+  margin-top: 25px;
+}
+
+.editModal__close {
+  all: unset;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,7 +154,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  background-color: #FF0000;
+  background-color: #ff0000;
   border-radius: 100px;
   width: 32px;
   height: 32px;
@@ -169,34 +162,23 @@
   right: -16px;
 }
 
-.modalDeletar {
-  background-color: rgba(0, 0, 0, 0.955);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: none;
+.deleteModal {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.modalDeletar h3 {
+.deleteModal__title {
   font-weight: 500;
   font-size: 40px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.modalDeletar .botoes {
+.deleteModal__btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,7 +188,7 @@
           flex-direction: row;
 }
 
-.modalDeletar .botoes .excluir {
+.deleteModal__btns button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,36 +198,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #DC3741;
-  border-radius: 8px;
   width: 140px;
   height: 57px;
-  color: #FFFFFF;
   font-size: 24px;
   font-weight: bold;
-  margin-right: 316px;
-  border: none;
-  cursor: pointer;
 }
 
-.modalDeletar .botoes .cancelar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #7066E0;
-  border-radius: 8px;
-  width: 140px;
-  height: 57px;
-  color: #0B0000;
-  font-size: 24px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+.deleteModal__btns .deleteModal__deleteBtn {
+  margin-right: 316px;
 }
 /*# sourceMappingURL=modals.css.map */
